@@ -8,75 +8,70 @@
 body {
   margin:0;
   font-family: Arial;
-  background: radial-gradient(circle at top, #111, #000);
+  background: radial-gradient(circle at top, #000, #0a0a0a);
   color:white;
-  overflow-x:hidden;
-}
-
-/* Floating Background */
-.bg {
-  position:fixed;
-  width:100%;
-  height:100%;
-  background: radial-gradient(circle, rgba(0,255,100,0.15), transparent);
-  animation: move 6s infinite alternate;
-}
-
-@keyframes move {
-  from { transform: translateY(0px); }
-  to { transform: translateY(30px); }
-}
-
-/* Glass Card */
-.container {
-  margin:40px 15px;
-  padding:25px;
-  border-radius:20px;
-  background: rgba(255,255,255,0.05);
-  backdrop-filter: blur(15px);
   text-align:center;
 }
 
-/* Title */
-h1 {
-  font-size:32px;
+/* HERO */
+.hero {
+  padding:40px 20px;
 }
 
-p {
+.hero img {
+  width:110px;
+  border-radius:50%;
+  box-shadow:0 0 20px red;
+}
+
+.hero h1 {
+  font-size:32px;
+  margin:10px 0;
+}
+
+.hero p {
   color:#bbb;
 }
 
-/* Buttons */
-.btn {
+/* MULTICOLOR BUTTON */
+.pro-btn {
   display:block;
-  margin:20px auto;
-  padding:16px;
+  margin:25px auto;
+  padding:18px;
   width:90%;
-  border-radius:50px;
-  text-decoration:none;
-  color:white;
-  font-size:18px;
+  font-size:20px;
   font-weight:bold;
-  position:relative;
-  overflow:hidden;
+  color:white;
+  text-decoration:none;
+  border-radius:50px;
+  background: linear-gradient(270deg, red, orange, yellow, green, cyan, blue, violet);
+  background-size: 800% 800%;
+  animation: gradientMove 6s ease infinite, pulse 2s infinite;
+  box-shadow: 0 0 25px rgba(255,0,0,0.6);
 }
 
-/* Main Button */
-.btn-main {
-  background: linear-gradient(90deg, #00ff99, #ff0033);
-  animation: pulse 2s infinite;
-}
-
-/* Second Button */
-.btn-second {
-  background: linear-gradient(90deg, gold, orange);
-  animation: glow 2s infinite;
+/* Animation */
+@keyframes gradientMove {
+  0% {background-position:0% 50%;}
+  50% {background-position:100% 50%;}
+  100% {background-position:0% 50%;}
 }
 
 @keyframes pulse {
   0% {transform:scale(1);}
-  50% {transform:scale(1.06);}
+  50% {transform:scale(1.08);}
   100% {transform:scale(1);}
+}
+
+.pro-btn:hover {
+  transform:scale(1.12);
+  box-shadow:0 0 35px yellow;
+}
+
+/* SECOND BUTTON */
+.btn2 {
+  background: linear-gradient(90deg, gold, orange);
+  animation: glow 2s infinite;
 }
 
 @keyframes glow {
@@ -85,35 +80,26 @@ p {
   100% {box-shadow:0 0 10px gold;}
 }
 
-/* Shine */
-.btn::before {
-  content:'';
-  position:absolute;
-  top:0;
-  left:-100%;
-  width:100%;
-  height:100%;
-  background: linear-gradient(120deg, transparent, rgba(255,255,255,0.5), transparent);
-  transition:0.6s;
-}
-
-.btn:hover::before {
-  left:100%;
-}
-
-/* Features */
+/* FEATURES */
 .features {
-  margin-top:20px;
+  padding:20px;
 }
 
 .card {
   background:#111;
   padding:12px;
-  margin:8px 0;
+  margin:10px;
   border-radius:10px;
 }
 
-/* Popup */
+/* BANNER */
+.banner {
+  width:100%;
+  margin-top:20px;
+  border-radius:10px;
+}
+
+/* POPUP */
 .popup {
   position:fixed;
   bottom:20px;
@@ -125,48 +111,56 @@ p {
   display:none;
 }
 
+.show {
+  display:block;
+}
+
 .popup a {
   color:#00ff99;
   text-decoration:none;
   font-weight:bold;
 }
 
-/* Show popup */
-.show {
-  display:block;
+.footer {
+  font-size:12px;
+  color:#888;
+  padding:20px;
 }
-
 </style>
 </head>
 
 <body>
 
-<div class="bg"></div>
+<!-- HERO -->
+<div class="hero">
+  <img src="https://i.ibb.co/7QpKsCX/dragon-tiger.jpg">
+  <h1>VASHU BHAI</h1>
+  <p>🐉 Dragon vs Tiger Prediction Channel 🐯</p>
 
-<div class="container">
-<h1>VASHU BHAI</h1>
-<p>Cricket Insights & Live Match Updates</p>
+  <a class="pro-btn" href="https://t.me/+2V8_E0bCY_1hMDhl">
+  🔥 JOIN VIP PREDICTION NOW 🔥
+  </a>
+</div>
 
-<a class="btn btn-main" href="https://t.me/+2V8_E0bCY_1hMDhl">
-📲 Join Free Telegram Channel
-</a>
+<!-- BANNER -->
+<img class="banner" src="https://i.ibb.co/7QpKsCX/dragon-tiger.jpg">
 
-<a class="btn btn-second" href="https://rummyloot.in?from_gameid=8979123&channelCode=8959779">
-🎁 Get Free Bonus App
-</a>
-
+<!-- FEATURES -->
 <div class="features">
-  <div class="card">🔥 Live Match Insights</div>
-  <div class="card">📊 Smart Analysis</div>
-  <div class="card">👥 Active Community</div>
-  <div class="card">⚡ Real-Time Updates</div>
+  <div class="card">🐉 Dragon Strategy Insights</div>
+  <div class="card">🐯 Tiger Timing Accuracy</div>
+  <div class="card">📊 Pattern Based Analysis</div>
+  <div class="card">⚡ Live Round Updates</div>
 </div>
 
-</div>
+<!-- SECOND BUTTON -->
+<a class="pro-btn btn2" href="https://rummyloot.in?from_gameid=8979123&channelCode=8959779">
+🎁 CLAIM FREE BONUS NOW
+</a>
 
 <!-- POPUP -->
 <div class="popup" id="popup">
-Join our Telegram for free updates 👉 
+⚡ Limited Entry!  
 <a href="https://t.me/+2V8_E0bCY_1hMDhl">Join Now</a>
 </div>
 
@@ -175,6 +169,11 @@ setTimeout(function(){
   document.getElementById("popup").classList.add("show");
 }, 4000);
 </script>
+
+<!-- FOOTER -->
+<div class="footer">
+This platform is for informational purposes only.
+</div>
 
 </body>
 </html>
