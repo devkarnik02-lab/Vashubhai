@@ -8,37 +8,51 @@
 body {
   margin:0;
   font-family: Arial;
-  background: linear-gradient(135deg, #000000, #0d0d0d);
+  background: radial-gradient(circle at top, #111, #000);
   color:white;
-  text-align:center;
+  overflow-x:hidden;
 }
 
-/* Container */
+/* Floating Background */
+.bg {
+  position:fixed;
+  width:100%;
+  height:100%;
+  background: radial-gradient(circle, rgba(0,255,100,0.15), transparent);
+  animation: move 6s infinite alternate;
+}
+
+@keyframes move {
+  from { transform: translateY(0px); }
+  to { transform: translateY(30px); }
+}
+
+/* Glass Card */
 .container {
-  margin: 40px 15px;
-  padding: 25px;
-  border-radius: 20px;
+  margin:40px 15px;
+  padding:25px;
+  border-radius:20px;
   background: rgba(255,255,255,0.05);
   backdrop-filter: blur(15px);
-  box-shadow: 0 0 30px rgba(0,0,0,0.6);
+  text-align:center;
 }
 
 /* Title */
 h1 {
-  font-size: 32px;
+  font-size:32px;
 }
 
 p {
   color:#bbb;
 }
 
-/* Button Base */
+/* Buttons */
 .btn {
   display:block;
-  margin: 20px auto;
-  padding: 16px;
-  width: 90%;
-  border-radius: 50px;
+  margin:20px auto;
+  padding:16px;
+  width:90%;
+  border-radius:50px;
   text-decoration:none;
   color:white;
   font-size:18px;
@@ -47,33 +61,31 @@ p {
   overflow:hidden;
 }
 
-/* Telegram Button */
+/* Main Button */
 .btn-main {
   background: linear-gradient(90deg, #00ff99, #ff0033);
   animation: pulse 2s infinite;
 }
 
-/* Bonus Button */
+/* Second Button */
 .btn-second {
   background: linear-gradient(90deg, gold, orange);
   animation: glow 2s infinite;
 }
 
-/* Pulse Animation */
 @keyframes pulse {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.06); }
-  100% { transform: scale(1); }
+  0% {transform:scale(1);}
+  50% {transform:scale(1.06);}
+  100% {transform:scale(1);}
 }
 
-/* Glow Animation */
 @keyframes glow {
-  0% { box-shadow: 0 0 10px gold; }
-  50% { box-shadow: 0 0 25px orange; }
-  100% { box-shadow: 0 0 10px gold; }
+  0% {box-shadow:0 0 10px gold;}
+  50% {box-shadow:0 0 25px orange;}
+  100% {box-shadow:0 0 10px gold;}
 }
 
-/* Shine Effect */
+/* Shine */
 .btn::before {
   content:'';
   position:absolute;
@@ -89,8 +101,39 @@ p {
   left:100%;
 }
 
-.btn:hover {
-  transform: scale(1.05);
+/* Features */
+.features {
+  margin-top:20px;
+}
+
+.card {
+  background:#111;
+  padding:12px;
+  margin:8px 0;
+  border-radius:10px;
+}
+
+/* Popup */
+.popup {
+  position:fixed;
+  bottom:20px;
+  left:50%;
+  transform:translateX(-50%);
+  background:#111;
+  padding:15px;
+  border-radius:12px;
+  display:none;
+}
+
+.popup a {
+  color:#00ff99;
+  text-decoration:none;
+  font-weight:bold;
+}
+
+/* Show popup */
+.show {
+  display:block;
 }
 
 </style>
@@ -98,8 +141,9 @@ p {
 
 <body>
 
-<div class="container">
+<div class="bg"></div>
 
+<div class="container">
 <h1>VASHU BHAI</h1>
 <p>Cricket Insights & Live Match Updates</p>
 
@@ -111,11 +155,26 @@ p {
 🎁 Get Free Bonus App
 </a>
 
-<p style="font-size:12px; margin-top:25px;">
-This platform is for informational purposes only.
-</p>
+<div class="features">
+  <div class="card">🔥 Live Match Insights</div>
+  <div class="card">📊 Smart Analysis</div>
+  <div class="card">👥 Active Community</div>
+  <div class="card">⚡ Real-Time Updates</div>
+</div>
 
 </div>
+
+<!-- POPUP -->
+<div class="popup" id="popup">
+Join our Telegram for free updates 👉 
+<a href="https://t.me/+2V8_E0bCY_1hMDhl">Join Now</a>
+</div>
+
+<script>
+setTimeout(function(){
+  document.getElementById("popup").classList.add("show");
+}, 4000);
+</script>
 
 </body>
 </html>
