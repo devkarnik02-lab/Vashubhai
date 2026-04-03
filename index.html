@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VASHU BHAI</title>
+
+<style>
+body {
+  margin:0;
+  font-family: Arial;
+  background: linear-gradient(135deg, #000000, #0d0d0d);
+  color:white;
+  text-align:center;
+}
+
+/* Container */
+.container {
+  margin: 40px 15px;
+  padding: 25px;
+  border-radius: 20px;
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(15px);
+  box-shadow: 0 0 30px rgba(0,0,0,0.6);
+}
+
+/* Title */
+h1 {
+  font-size: 32px;
+}
+
+p {
+  color:#bbb;
+}
+
+/* Button Base */
+.btn {
+  display:block;
+  margin: 20px auto;
+  padding: 16px;
+  width: 90%;
+  border-radius: 50px;
+  text-decoration:none;
+  color:white;
+  font-size:18px;
+  font-weight:bold;
+  position:relative;
+  overflow:hidden;
+}
+
+/* Telegram Button */
+.btn-main {
+  background: linear-gradient(90deg, #00ff99, #ff0033);
+  animation: pulse 2s infinite;
+}
+
+/* Bonus Button */
+.btn-second {
+  background: linear-gradient(90deg, gold, orange);
+  animation: glow 2s infinite;
+}
+
+/* Pulse Animation */
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.06); }
+  100% { transform: scale(1); }
+}
+
+/* Glow Animation */
+@keyframes glow {
+  0% { box-shadow: 0 0 10px gold; }
+  50% { box-shadow: 0 0 25px orange; }
+  100% { box-shadow: 0 0 10px gold; }
+}
+
+/* Shine Effect */
+.btn::before {
+  content:'';
+  position:absolute;
+  top:0;
+  left:-100%;
+  width:100%;
+  height:100%;
+  background: linear-gradient(120deg, transparent, rgba(255,255,255,0.5), transparent);
+  transition:0.6s;
+}
+
+.btn:hover::before {
+  left:100%;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>VASHU BHAI</h1>
+<p>Cricket Insights & Live Match Updates</p>
+
+<a class="btn btn-main" href="https://t.me/+2V8_E0bCY_1hMDhl">
+📲 Join Free Telegram Channel
+</a>
+
+<a class="btn btn-second" href="https://rummyloot.in?from_gameid=8979123&channelCode=8959779">
+🎁 Get Free Bonus App
+</a>
+
+<p style="font-size:12px; margin-top:25px;">
+This platform is for informational purposes only.
+</p>
+
+</div>
+
+</body>
+</html>
